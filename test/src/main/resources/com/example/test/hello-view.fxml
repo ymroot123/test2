@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="113.0" prefWidth="124.0" spacing="20.0" stylesheets="@studentView.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <AnchorPane prefHeight="843.0" prefWidth="1200.0">
+            <children>
+                <TableView fx:id="studentTable" layoutX="308.0" layoutY="5.0" prefHeight="430.0" prefWidth="878.0">
+                    <columns>
+                        <TableColumn fx:id="sno" prefWidth="187.0" text="入库编号" />
+                        <TableColumn fx:id="name" prefWidth="135.0" text="类型名" />
+                        <TableColumn fx:id="date" prefWidth="193.0" text="入库日期" />
+                        <TableColumn fx:id="sex" prefWidth="144.0" text="是否运营" />
+                        <TableColumn fx:id="phone" prefWidth="218.0" text="车牌号" />
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#btnDel" text="删除" />
+                                <MenuItem mnemonicParsing="false" onAction="#btnEdit" text="购买" />
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <TextField fx:id="txtNum" layoutX="40.0" layoutY="86.0" promptText="请输入入库编号" />
+                <TextField fx:id="txtName" layoutX="40.0" layoutY="142.0" promptText="请输入类型名" />
+                <DatePicker fx:id="txtDate" layoutX="40.0" layoutY="189.0" promptText="请选择入库日期" />
+                <RadioButton fx:id="man" layoutX="40.0" layoutY="268.0" mnemonicParsing="false" text="运营">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="rsex" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="woman" layoutX="171.0" layoutY="268.0" mnemonicParsing="false" text="非运营" toggleGroup="$rsex" />
+                <Button fx:id="btnQuery" layoutX="44.0" layoutY="394.0" mnemonicParsing="false" onAction="#btnQuery" text="查询" />
+                <Button fx:id="btnInsert" layoutX="204.0" layoutY="394.0" mnemonicParsing="false" onAction="#btnInsert" text="新增数据" />
+                <Pagination fx:id="pageTable" layoutX="382.0" layoutY="571.0" prefHeight="75.0" prefWidth="798.0" />
+                <!--分页组件-->
+                <TextField fx:id="txtPhone" layoutX="40.0" layoutY="320.0" promptText="请输入车牌号" />
+                <Button fx:id="btnEditSave" layoutX="106.0" layoutY="394.0" mnemonicParsing="false" onAction="#btnEditSave" prefHeight="23.0" prefWidth="64.0" text="保存购买记录" textFill="#0e4745" />
+                <Text fx:id="text1" layoutX="172.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="符合条件的数据有" wrappingWidth="109.33333333333331" />
+                <Label fx:id="count" layoutX="281.0" layoutY="507.0" prefHeight="23.0" prefWidth="21.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

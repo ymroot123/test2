@@ -1,0 +1,10 @@
+.wrapper {/*类选择器，顶层容器*/
+    -fx-padding: 10px; /* 设置内边距为10像素，可以根据需要调整 */
+}
+.table-column{/*类选择器，TableView中的列*/
+    -fx-alignment: center; /* 表格列中内容的水平对齐方式为居中 */
+}
+.menu-item{/*右键菜单项，使用JavaFX提供的菜单项类型选择器*/
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+}
